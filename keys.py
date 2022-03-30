@@ -1,9 +1,12 @@
 import evdev, time
 from evdev import InputDevice, categorize, ecodes
 
+NULL_CHAR = chr(0)
+
 dev =  None
 while dev is None:
         try:
+           # change to /dev/input/event1, /dev/input/event2 or /dev/input/event3 as needed
            dev = InputDevice('/dev/input/event0')
         except:
            print "No keyboard - waiting..."
