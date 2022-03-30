@@ -3,7 +3,7 @@ devicename="NexDock"
 
 echo "Finding BT device *$devicename* ..."
 scan=$(sudo hcitool scan)
-found=$(grep $devicename <<< $scan)
+found=$(grep "$devicename" <<< $scan)
 if [ $? -eq 0 ]
 then
         mac=$(cut -f 2 <<< $found)
